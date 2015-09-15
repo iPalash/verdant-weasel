@@ -11,8 +11,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         super(Application.class);
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
-    }
+
+
 }
