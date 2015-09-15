@@ -16,7 +16,22 @@
 
         <TableRow>
             <TextView
-                />
+                android:text="Battery Status"
+                android:layout_margin="10dp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/batteryTemp"
+                android:layout_margin="10dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Battery Status"
+                android:layout_margin="10dp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/batteryLevel"
+                android:layout_margin="10dp"/>
         </TableRow>
 
     </TableLayout>
