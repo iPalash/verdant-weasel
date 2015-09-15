@@ -3,6 +3,8 @@ package para.m2m.alpha;
 /**
  * Created by swapnil on 15/9/15.
  */
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.regex.Matcher;
@@ -29,7 +31,7 @@ public class tools {
     }
     public String getBatterydump(){
         StringBuffer output = new StringBuffer();
-        String command="dumpsys battery";
+        String command="su dumpsys battery";
         Process p;
         try {
             p = Runtime.getRuntime().exec(command);
@@ -45,6 +47,9 @@ public class tools {
             e.printStackTrace();
         }
         String response = output.toString();
+        System.out.println("saldnsaklndlaks");
+        System.out.println(response);
+        System.out.println("sdalkdksl");
         return response;
     }
 }

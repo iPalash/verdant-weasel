@@ -14,8 +14,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textView = (TextView) findViewById(R.id.battery);
-        textView.setText(new tools().getBattery());
+        tools parameters = new tools();
+        String batteryDump = parameters.getBatterydump();
+
+        TextView textView = (TextView) findViewById(R.id.batteryTemp);
+        textView.setText(parameters.batterytemp(batteryDump));
+
+        textView = (TextView) findViewById(R.id.batteryLevel);
+        textView.setText(parameters.batterypercentage(batteryDump));
     }
 
     @Override
