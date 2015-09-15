@@ -5,10 +5,31 @@ package para.m2m.alpha;
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class tools {
-    public String getBattery(){
+    public String batterypercentage(String dump){
+        String pat="level: (\\d+)";
+        Pattern p=Pattern.compile(pat);
+        Matcher m=p.matcher(dump);
+        if (m.find( )) {
+            return m.group(1);
+        }
+        else return "NF";
+    }
+    public String batterytemp(String dump){
+        String pat="temperature: (\\d+)";
+        Pattern p=Pattern.compile(pat);
+        Matcher m=p.matcher(dump);
+        if (m.find( )) {
+            return m.group(1);
+        }
+        else return "NF";
+    }
+    public String getBatterydump(){
         StringBuffer output = new StringBuffer();
-        String command="dumpsys batterymanager";
+        String command="dumpsys battery";
         Process p;
         try {
             p = Runtime.getRuntime().exec(command);
