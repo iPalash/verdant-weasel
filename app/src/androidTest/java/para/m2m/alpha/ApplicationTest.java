@@ -10,9 +10,4 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public ApplicationTest() {
         super(Application.class);
     }
-
-    @Override
-    public String getName() {
-        return super.getName();
-    }
 }
