@@ -3,6 +3,9 @@ package para.m2m.alpha;
 /**
  * Created by swapnil on 15/9/15.
  */
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.BatteryManager;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -31,7 +34,7 @@ public class tools {
     }
     public String getBatterydump(){
         StringBuffer output = new StringBuffer();
-        String command="su dumpsys battery";
+        String command="su -c dumpsys battery";
         Process p;
         try {
             p = Runtime.getRuntime().exec(command);
@@ -47,9 +50,6 @@ public class tools {
             e.printStackTrace();
         }
         String response = output.toString();
-        System.out.println("saldnsaklndlaks");
-        System.out.println(response);
-        System.out.println("sdalkdksl");
         return response;
     }
 }
